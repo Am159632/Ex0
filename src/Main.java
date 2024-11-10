@@ -67,6 +67,21 @@ public class Main {
        System. out.println(count+" prime numbers in [2,"+n+")");
         //end c
         //d
-
+       index=2;
+        int n1=n/2;
+        System. out.print(index);
+        while(n1>1)
+        {
+            if (Isprime(index)==true&&n1%index==0)
+            {
+                System. out.print("*"+index);
+                n1=n1/index;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        System. out.print("="+n);
     }
 }
