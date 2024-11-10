@@ -1,12 +1,27 @@
 import javax.sound.midi.SysexMessage;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.LinkedTransferQueue;
 
 import static java.lang.System.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        public int Isprime( int num)
+        {
+            int e = 0;
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    e = 1;
+                }
+            }
+            return e;
+        }
         Scanner scanner = new Scanner(in);
         //a
         out.println("Enter a natural even number (>4):");
@@ -80,7 +95,6 @@ public class Main {
                 index++;
             }
         }
-        System.out.println(Arrays.asList(a));
     }
 }
 
