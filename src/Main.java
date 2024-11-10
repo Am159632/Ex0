@@ -22,13 +22,13 @@ public class Main {
     }
     public static void main(String[] args)
     {
-
+        long startTime = System.nanoTime();
         Scanner scanner = new Scanner(in);
         //a
         out.println("Enter a natural even number (>4):");
         int n = scanner.nextInt();
         int p1 = 0, p2 = 0;
-        for (int i = 3; i <n / 2; i++)
+        for (int i = 3; i <n ; i++)
         {
             if ((Isprime(i) == true) && (Isprime(n - i) == true))
             {
@@ -65,8 +65,8 @@ public class Main {
                 count++;
             }
         }
-        System. out.println(count+" prime numbers in [2,"+n+")");
-        System. out.print("("+a[0]);
+        System. out.print(count+" prime numbers in [2,"+n+"):");
+        System. out.print("//("+a[0]);
         for(int i=1;i<count;i++)
         {
             System. out.print(","+a[i]);
@@ -76,7 +76,7 @@ public class Main {
         //d
        index=2;
         int n1=n/2;
-        System. out.print(index);
+        System. out.print(n+"="+index);
         while(n1>1)
         {
             if (Isprime(index)==true&&n1%index==0)
@@ -89,7 +89,19 @@ public class Main {
                 index++;
             }
         }
-        System. out.print("="+n);
-        //end d a
+        System. out.println("");
+        //end d
+        //e
+        System. out.println("//solely designed and implemented by 207302456");
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);//nanoseconds
+        System.out.println("//the program runtime "+ duration + " nanoseconds");
     }
 }
+/*
+חיבור github
+שינוי גודל מערך
+האם צריך את ההוספות
+איך הופכים לשניות את הזמן הרצה
+איך גורמים לתכנית לרוץ במספר גדול
+ */
