@@ -54,16 +54,19 @@ public class Main {
         }
         //end b
         //c
-        int[]a=new int[n];
+      //  int[]a=new int[n];
        int count=0;
         for (int i=2;i<n;i++)
         {
-            if (Isprime(n)==true)
+            if (Isprime(i)==true)
             {
-                a[count]=i;
+            //    a[count]=i;
                 count++;
             }
         }
        System. out.println(count+" prime numbers in [2,"+n+")");
+        //end c
+        //d
+
     }
 }
