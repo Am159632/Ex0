@@ -2,7 +2,6 @@ import javax.sound.midi.SysexMessage;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.LinkedTransferQueue;
-
 import static java.lang.System.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -30,7 +29,7 @@ public class Main {
         int p1 = 0, p2 = 0;
         for (int i = 3; i <n / 2; i++)
         {
-            if (Isprime(i)==true&&Isprime(n-i)==true)
+            if ((Isprime(i) == true) && (Isprime(n - i) == true))
             {
                 p1=i;
                 p2=n-i;
