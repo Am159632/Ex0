@@ -1,5 +1,6 @@
 import javax.sound.midi.SysexMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.LinkedTransferQueue;
 import static java.lang.System.*;
@@ -10,7 +11,7 @@ public class Main {
     static boolean Isprime( int num)
     {
         boolean e = true;
-        for (int i = 2; i < num; i++)
+        for (int i = 2; i <=num/2; i++)
         {
             if (num % i == 0)
             {
@@ -53,17 +54,24 @@ public class Main {
         }
         //end b
         //c
-      //  int[]a=new int[n];
-       int count=0;
+        int[] a=new int[n];
+        int count=0;
         for (int i=2;i<n;i++)
         {
+
             if (Isprime(i)==true)
             {
-            //    a[count]=i;
+                a[count]=i;
                 count++;
             }
         }
-       System. out.println(count+" prime numbers in [2,"+n+")");
+        System. out.println(count+" prime numbers in [2,"+n+")");
+        System. out.print("("+a[0]);
+        for(int i=1;i<count;i++)
+        {
+            System. out.print(","+a[i]);
+        }
+        System. out.println(")");
         //end c
         //d
        index=2;
