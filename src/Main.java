@@ -43,7 +43,7 @@ public class Main {
         //b
         //Searching pair of numbers that maintains n=p3-p4 and print then.(p3,p4 are prime numbers)
         int p4,p3;
-        for(int i = 2; i <= n * 100; i++)
+        for(int i = 2; i <= n * 200; i++)
         {
             if(Isprime(n+i) && Isprime(i))
             {
