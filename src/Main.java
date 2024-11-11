@@ -8,11 +8,14 @@ import static java.lang.System.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    //Action that reciving integer number and return true if prime,false if not
     static boolean Isprime( int num)
     {
         boolean e = true;
-        for (int i = 2; i <=num/2; i++)
-        {
+        for (int i = 2; i <=num/2; i++)//Passing on the numbers from 2 to num/2 because after this
+          //  i don't need to check(2 is the smallest number)/I check if the number is divided by all numbers
+            // between 2 to num/2 without rest.If this correct,return true,else,return false.
+            {
             if (num % i == 0)
             {
                 e = false;
@@ -22,22 +25,25 @@ public class Main {
     }
     public static void main(String[] args)
     {
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime();//Start time
         Scanner scanner = new Scanner(in);
+        out.println("Enter a natural even number (>4):");//Input even number bigger than 4
         //a
-        out.println("Enter a natural even number (>4):");
+        //Searching pair of numbers that p1+p2=n that p1,p2 are prime numbers.
         int n = scanner.nextInt();
         int p1 = 0, p2 = 0;
-        for (int i = 3; i <n ; i++)
+        for (int i = 2; i <n ; i++)//passing on the numbers from 2 because 1 is not prime to n-1
+       // because n is not prime(even and divided by 2)
         {
-            if ((Isprime(i) == true) && (Isprime(n - i) == true))
-            {
+            if ((Isprime(i) == true) && (Isprime(n - i) == true))//check if i and his couple(n-i) are prime.if
+
+            {//If right,put the pair of the numbers in p1,p2 and end the loop
                 p1=i;
                 p2=n-i;
                 break;
             }
         }
-        System.out.println(n+"="+p1+"+"+p2);
+        System.out.println(n+"="+p1+"+"+p2);//print the numbers(example:20=3+17
         //end a
         //b
         int p3=0,p4=0,index=2,sign=0;
@@ -94,8 +100,8 @@ public class Main {
         //e
         System. out.println("//solely designed and implemented by 207302456");
         long endTime = System.nanoTime();
-        long duration = (endTime - startTime);//nanoseconds
-        System.out.println("//the program runtime "+ duration + " nanoseconds");
+        double duration = (endTime - startTime)/1000000000.0;//nanoseconds
+        System.out.println("//the program runtime "+duration+" seconds");
     }
 }
 /*
