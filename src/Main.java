@@ -39,21 +39,18 @@ public class Main {
             }
         }
         System.out.println(n+"="+p1+"+"+p2);//print the numbers(example:20=3+17
-        //end a
         //b
         //Searching pair of numbers that maintains n=p3-p4 and print then.(p3,p4 are prime numbers)
         int p4,p3;
         for(int i = 2; i <= n * 100; i++)
         {
-            if(Isprime(n+i) && Isprime(i))
-            {
-                p3=n+i;
+            if (Isprime(n + i) && Isprime(i)) {
+                p3 = n + i;
                 p4 = i;
-                System.out.println(n+"="+p3+"-"+p4);
+                System.out.println(n + "=" + p3 + "-" + p4);
                 break;
             }
         }
-        //end b
         //c
         int count = 0;
         for (int i = 2; i < n; i++)
@@ -65,14 +62,13 @@ public class Main {
             }
         }
         System.out.println(count+" prime numbers in [2,"+n+")");
-        //end c
         //d
         int index=2;
         int n1=n/2;
         System.out.print(n+"="+index);
         while(n1>1)
         {
-            if (Isprime(index)==true&&n1%index==0)
+            if (Isprime(index) &&n1%index==0)
             {
                 System.out.print("*"+index);
                 n1=n1/index;
@@ -82,10 +78,10 @@ public class Main {
                 index++;
             }
         }
-        System.out.println("");
-        //end d
+        System.out.println();
         //e
         System.out.println("207302456");
+        //f
         long endTime = nanoTime();
         double duration = (endTime - startTime)/1_000_000_000.0;//seconds
         System.out.println(duration+" seconds");
