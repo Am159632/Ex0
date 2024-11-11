@@ -47,8 +47,8 @@ public class Main {
         {
             if(Isprime(n+i) && Isprime(i))
             {
-                p3=n;
-                p4 = n - i;
+                p3=n+i;
+                p4 = i;
                 System.out.println(n+"="+p3+"-"+p4);
                 break;
             }
@@ -58,7 +58,7 @@ public class Main {
         int count = 0;
         for (int i = 2; i < n; i++)
         {
-            out.println(i);
+
             if (Isprime(i))
             {
                 count++;
