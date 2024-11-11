@@ -65,19 +65,14 @@ public class Main {
         //d
         int index=2;
         int n1=n/2;
-        System.out.print(n+"="+index);
+        System.out.print(n+"="+2);
         while(n1>1)
-        {
-            if (Isprime(index) &&n1%index==0)
-            {
-                System.out.print("*"+index);
-                n1=n1/index;
-            }
-            else
-            {
+            if (Isprime(index) && n1 % index == 0) {
+                System.out.print("*" + index);
+                n1 = n1 / index;
+            } else {
                 index++;
             }
-        }
         System.out.println();
         //e
         System.out.println("207302456");
