@@ -151,6 +151,7 @@ END FUNCTION
          */
         int index = 2;
         System.out.print(n + "=" +2);
+        n=n/2;
         while (n > 1)
             if (Isprime(index) && n % index == 0) {
                 System.out.print("*" + index);
