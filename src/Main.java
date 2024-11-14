@@ -4,7 +4,7 @@ import static java.lang.System.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static boolean Isprime(int num)
+    static boolean isprime(int num)
     {
         for (int i = 2; i <= Math.sqrt(num); i++)
             if (num % i == 0)
@@ -26,7 +26,7 @@ public class Main {
         int p1=0,p2=0;
         for (int i = 2; i < n; i++)
         {
-            if ((Isprime(i)) && (Isprime(n - i)))
+            if ((isprime(i)) && (isprime(n - i)))
             {
                 p1 = i;
                 p2 = n - i;
@@ -37,7 +37,7 @@ public class Main {
         //b
         int p4, p3;
         for (int i = 2; i < 100_000_000; i++) {
-            if (Isprime(n + i) && Isprime(i)) {
+            if (isprime(n + i) && isprime(i)) {
                 p3 = n + i;
                 p4 = i;
                 System.out.println(n + "=" + p3 + "-" + p4);
@@ -48,7 +48,7 @@ public class Main {
         int count = 1;
         for (int i = 3; i < n; i+=2)
 
-            if (Isprime(i))
+            if (isprime(i))
                 count++;
 
         System.out.println(count + " prime numbers in [2," + n + ")");
@@ -57,7 +57,7 @@ public class Main {
         System.out.print(n + "=" +2);
         n=n/2;
         while (n > 1)
-            if (Isprime(index) && n % index == 0) {
+            if (isprime(index) && n % index == 0) {
                 System.out.print("*" + index);
                 n = n / index;
             } else
