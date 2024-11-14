@@ -88,7 +88,7 @@ FUNCTION isPrime(num)
 END FUNCTION
          */
         int p4, p3;
-        for (int i = 2; i <= n * 10; i++) {
+        for (int i = 2; i < 100_000_000; i++) {
             if (Isprime(n + i) && Isprime(i)) {
                 p3 = n + i;
                 p4 = i;
