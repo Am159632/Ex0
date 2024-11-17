@@ -3,6 +3,50 @@ import static java.lang.System.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/* My explain
+
+*/
+/*Pseudocode
+function isPrime(num):
+    for i from 2 to squareRoot(num):
+        if num % i == 0:
+            return false
+    return true
+
+function main():
+    print "Enter a natural even number (>4):"
+    n = read input as integer
+
+    if n % 2 == 1 or n <= 4:
+        print "error"
+        return
+
+    # Part a: Find two primes that sum up to n
+    p1, p2 = 0, 0
+    for i from 2 to n-1:
+        if isPrime(i) and isPrime(n - i):
+            p1 = i
+            p2 = n - i
+            break
+    print n + "=" + p1 + "+" + p2
+
+    # Part b: Find two primes such that one is n plus another prime
+    p3, p4 = 0, 0
+    for i from 2 to 100_000_000:
+        if isPrime(n + i) and isPrime(i):
+            p3 = n + i
+            p4 = i
+            print n + "=" + p3 + "-" + p4
+            break
+
+    # Part c: Count prime numbers less than n
+    count = 1
+    for i from 3 to n-1 step 2:
+        if isPrime(i):
+            count += 1
+    print count + " prime numbers in [2,n)
+
+ */
 public class Main {
     static boolean isprime(int num)
     {
