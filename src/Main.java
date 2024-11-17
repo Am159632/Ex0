@@ -4,16 +4,40 @@ import static java.lang.System.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 /* My explain
+Function isPrime(num):
+The isPrime(num) function takes an integer number as input and checks if it is a prime number.
+It does this by using a for loop starting from 2, because 2 is the first prime number to check.
+The loop runs up to the square root of num, as this range is sufficient to check all possible divisors.
+For each index, it checks if num is divisible by the current number without a remainder.
+If such a divisor is found, the function returns false and terminates.
+If no such divisor is found and the loop completes, it means the number is prime,
+and the function returns true.
+
+Function main():
+
+# Part a: Find two primes that sum up to n
+The program does this by using a for loop from 2 to n-1 because 2 is the first prime number.
+The program checks if the index is prime and if its opposite (n - index) is also prime.
+If both are prime, it means that a pair is exist, and replacement the index to p1 and n - index to p2.
+Then, it prints in the format n = p1 + p2 and stop the loop.
+
+# Part b: Find two primes such that one is n plus another prime
+"The program iterates over a for loop from 2, which is the first prime number, up to 1,000,000,000.
+It checks if the index is prime and if its counterpart (n + index) is also prime.
+If a pair where both are prime is found, it replacement n + index to p3 and index to p4.
+Then, it prints in the format n = p3 - p4 and stops the loop.
+
+# Part c: Count prime numbers in [2,n]
 
 */
 /*Pseudocode
-function isPrime(num):
+Function isPrime(num):
     for i from 2 to squareRoot(num):
         if num % i == 0:
             return false
     return true
 
-function main():
+Function main():
     print "Enter a natural even number (>4):"
     n = read input as integer
 
@@ -27,8 +51,8 @@ function main():
         if isPrime(i) and isPrime(n - i):
             p1 = i
             p2 = n - i
+            print n + "=" + p1 + "+" + p2
             break
-    print n + "=" + p1 + "+" + p2
 
     # Part b: Find two primes such that one is n plus another prime
     p3, p4 = 0, 0
@@ -39,7 +63,7 @@ function main():
             print n + "=" + p3 + "-" + p4
             break
 
-    # Part c: Count prime numbers less than n
+    # Part c: Count prime numbers in [2,n]
     count = 1
     for i from 3 to n-1 step 2:
         if isPrime(i):
@@ -84,10 +108,10 @@ public class Main {
             {
                 p1 = i;
                 p2 = n - i;
+                System.out.println(n + "=" + p1 + "+" + p2);
                 break;
             }
         }
-        System.out.println(n + "=" + p1 + "+" + p2);
         //b
         int p4, p3;
         for (int i = 2; i < 100_000_000; i++) {
