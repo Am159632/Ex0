@@ -34,7 +34,13 @@ If a number is prime, the count increases by 1.
 When the loop ends, the program will print in the format count prime numbers in [2,n)
 
  # Part d: Prime factorization of n
-
+"The program starts with index = 2, which will be the divisor.
+It begins by printing the format n = 2 and dividing n by 2 to avoid issues at the end
+where there would be a * at the end,
+since every number obtained will be divisible at least once by 2 because it is even.
+Then, it enters a while loop that runs as long as n is greater than 1.
+The loop checks each time if index is prime and if n is divisible by index without a remainder.
+If so, it adds *index to the output and divides n by index. Otherwise,the index increases by 1."
 
 */
 /*Pseudocode
