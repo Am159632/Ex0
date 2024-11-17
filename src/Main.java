@@ -51,12 +51,6 @@ Function isPrime(num):
     return true
 
 Function main():
-    print "Enter a natural even number (>4):"
-    n = read input as integer
-
-    if n % 2 == 1 or n <= 4:
-        print "error"
-        return
 
     # Part a: Find two primes that sum up to n
     p1, p2 = 0, 0
