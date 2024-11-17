@@ -43,9 +43,19 @@ function main():
     count = 1
     for i from 3 to n-1 step 2:
         if isPrime(i):
-            count += 1
-    print count + " prime numbers in [2,n)
+            count ++
+    print count + " prime numbers in [2,n)"
 
+    # Part d: Prime factorization of n:
+    index = 2
+    print n + "=" + 2
+    n=n/2
+    while n > 1:
+         If indes divides n and n % index == 0:
+            print "*" + index
+            n = n / index
+        else:
+            index = index++
  */
 public class Main {
     static boolean isprime(int num)
