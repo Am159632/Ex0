@@ -22,12 +22,19 @@ If both are prime, it means that a pair is exist, and replacement the index to p
 Then, it prints in the format n = p1 + p2 and stop the loop.
 
 # Part b: Find two primes such that one is n plus another prime
-"The program iterates over a for loop from 2, which is the first prime number, up to 1,000,000,000.
+The program goes over a for loop from 2, which is the first prime number, up to 1,000,000,000.
 It checks if the index is prime and if its counterpart (n + index) is also prime.
 If a pair where both are prime is found, it replacement n + index to p3 and index to p4.
 Then, it prints in the format n = p3 - p4 and stops the loop.
 
 # Part c: Count prime numbers in [2,n]
+"The program starts counting from 1, meaning it already counts 2.
+Then, it only checks odd numbers (starting from 3 up to n-1 since n is even) to see if each number is prime.
+If a number is prime, the count increases by 1.
+When the loop ends, the program will print in the format count prime numbers in [2,n)
+
+ # Part d: Prime factorization of n
+
 
 */
 /*Pseudocode
