@@ -1,10 +1,10 @@
 import java.util.Scanner;
 import static java.lang.System.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-/* My explain
-Function isPrime(num):
+/* Function isPrime(num):
+
+My explain
+
 The isPrime(num) function takes an integer number as input and checks if it is a prime number.
 It does this by using a for loop starting from 2, because 2 is the first prime number to check.
 The loop runs up to the square root of num, as this range is sufficient to check all possible divisors.
@@ -13,7 +13,27 @@ If such a divisor is found, the function returns false and terminates.
 If no such divisor is found and the loop completes, it means the number is prime,
 and the function returns true.
 
-Function main():
+Pseudocode
+Function isPrime(num):
+    for i from 2 to squareRoot(num):
+        if num % i == 0:
+            return false
+    return true
+ */
+
+public class Ex0 {
+    static boolean isprime(int num)
+    {
+        for (int i = 2; i <= Math.sqrt(num); i++)
+            if (num % i == 0)
+                return false;
+
+        return true;
+    }
+
+/*Function main():
+
+My explain
 
 # Part a: Find two primes that sum up to n
 The program does this by using a for loop from 2 to n-1 because 2 is the first prime number.
@@ -40,17 +60,9 @@ where there would be a * at the end,
 since every number obtained will be divisible at least once by 2 because it is even.
 Then, it enters a while loop that runs as long as n is greater than 1.
 The loop checks each time if index is prime and if n is divisible by index without a remainder.
-If so, it adds *index to the output and divides n by index. Otherwise,the index increases by 1."
+If so, it adds *index to the output and divides n by index. Otherwise,the index increases by 1.
 
-*/
-/*Pseudocode
-Function isPrime(num):
-    for i from 2 to squareRoot(num):
-        if num % i == 0:
-            return false
-    return true
-
-Function main():
+Pseudocode
 
     # Part a: Find two primes that sum up to n
     p1, p2 = 0, 0
@@ -88,15 +100,6 @@ Function main():
         else:
             index = index++
  */
-public class Ex0 {
-    static boolean isprime(int num)
-    {
-        for (int i = 2; i <= Math.sqrt(num); i++)
-            if (num % i == 0)
-                return false;
-
-        return true;
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(in);
