@@ -88,7 +88,7 @@ Function main():
         else:
             index = index++
  */
-public class Main {
+public class Ex0 {
     static boolean isprime(int num)
     {
         for (int i = 2; i <= Math.sqrt(num); i++)
