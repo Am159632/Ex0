@@ -44,27 +44,28 @@ My explain
 The program does this by using a for loop from 2 to n-1 because 2 is the first prime number.
 The program checks if the index is prime and if its opposite (n - index) is also prime.
 If both are prime, it means that a pair is exist,
-and prints in the format n = i + (n+i) and stop the loop.
+and prints in the format "n = i + (n+i)" and stop the loop.
 
-# Part b: Find two primes such that one is n plus another prime
-The program goes over a while loop,and put in to the index 2 which is the first prime number.
+# Part b: Find two primes that subtraction up to n
+The program goes over a while loop until finds a pair,and put in to the index 2 which is the first prime number.
 It checks if the index is prime and if its counterpart (n + index) is also prime.
-If a pair where both are prime is found, it prints in the format n = (n+index) - (index) and stops the loop.
+If a pair where both are prime is found, it prints in the format "n = (n+index) - (index)" and stops the loop.
 
 # Part c: Count prime numbers in [2,n]
-The program starts counting from 1, meaning it already counts 2.
+The program starts counting from 1, meaning it already counts the number 2(the only prime even number).
 Then, it only checks odd numbers (starting from 3 up to n-1 since n is even) to see if each number is prime.
 If a number is prime, the count increases by 1.
-When the loop ends, the program will print in the format count prime numbers in [2,n).
+When the loop ends, the program will print in the format "count prime numbers in [2,n)".
 
  # Part d: Prime factorization of n
 The program starts with index = 2, which will be the divisor.
-It begins by printing the format n = 2 and dividing n by 2 to avoid issues at the end
+It begins by printing the format "n = 2" and dividing n by 2 to avoid issues at the end
 where there would be a * at the end,
 since every number obtained will be divisible at least once by 2 because it is even.
 Then, it enters a while loop that runs as long as n is greater than 1.
 The loop checks each time if index is prime and if n is divisible by index without a remainder.
-If so, it adds *index to the output and divides n by index. Otherwise,the index increases by 1.
+If so, it adds "*index" to the output and divides n by index. Otherwise,the index increases by 1.
+Finally,the program printed in the format "n=2*....".
 
 Pseudocode
 
@@ -74,15 +75,15 @@ Pseudocode
             print n + "=" + i + "+" + (n-i)
             break
 
-    # Part b: Find two primes such that one is n plus another prime
+    # Part b: Find two primes that subtraction up to n
     index=2
     while true:
         if isPrime(n + index) and isPrime(index):
-            print n + "=" + (n+i) + "-" + i
+            print n + "=" + (n+index) + "-" + index
             break
         index++
 
-    # Part c: Count prime numbers in [2,n]
+    # Part c: Count prime numbers in [2,n)
     count = 1
     for i from 3 to n-1 step 2:
         if isPrime(i):
@@ -94,7 +95,7 @@ Pseudocode
     print n + "=" + 2
     n=n/2
     while n > 1:
-         If isPrime(index) and index%n==0:
+         If isPrime(index) and n%index==0:
             print "*" + index
             n = n / index
         else:
@@ -105,11 +106,12 @@ Pseudocode
         Scanner scanner = new Scanner(in);
         System.out.println("Enter a natural even number (>4):");//Input even number bigger than 4
         int n = scanner.nextInt();
-        long start=System.currentTimeMillis();
+        long start=System.currentTimeMillis();// When the program start
         if(n%2==1||n<=4) {
             System.out.println("error");
             return;
         }
+
         //a
         for (int i = 2; i < n; i++)
         {
@@ -119,6 +121,7 @@ Pseudocode
                 break;
             }
         }
+
         //b
         int index = 2;
         while(true) {
@@ -136,7 +139,6 @@ Pseudocode
             if (isPrime(i))
                 count++;
         System.out.println(count + " prime numbers in [2," + n + ")");
-
         //d
         index = 2;
         System.out.print(n + "=" +2);
@@ -147,13 +149,14 @@ Pseudocode
                 n = n / index;
             } else
                 index++;
+
         System.out.println();
 
         //e
-        System.out.println("207302456");
+        System.out.println("207302456");//Print my id
         //f
-        long end =System.currentTimeMillis();
-        double duration = (end - start) / 1_000.0;//seconds
-        System.out.println(duration + " seconds");
+        long end =System.currentTimeMillis();// When the program start
+        double duration = (end - start) / 1_000.0;//How much seconds the program run
+        System.out.println(duration + " seconds");//Print the time
     }
 }
