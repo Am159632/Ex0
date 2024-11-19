@@ -23,12 +23,7 @@ Function isPrime(num):
     return true
  */
 
-    /**
-     *
-     * @param num
-     * @return
-     */
-    static boolean isprime(int num)
+    public static boolean isprime(int num)
     {
         for (int i = 2; i <= Math.sqrt(num); i++)
             if (num % i == 0)
