@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import static java.lang.System.*;
 
+public class Ex0 {
+
 /* Function isPrime(num):
 
 My explain
@@ -21,7 +23,11 @@ Function isPrime(num):
     return true
  */
 
-public class Ex0 {
+    /**
+     *
+     * @param num
+     * @return
+     */
     static boolean isprime(int num)
     {
         for (int i = 2; i <= Math.sqrt(num); i++)
@@ -38,20 +44,19 @@ My explain
 # Part a: Find two primes that sum up to n
 The program does this by using a for loop from 2 to n-1 because 2 is the first prime number.
 The program checks if the index is prime and if its opposite (n - index) is also prime.
-If both are prime, it means that a pair is exist, and replacement the index to p1 and n - index to p2.
-Then, it prints in the format n = p1 + p2 and stop the loop.
+If both are prime, it means that a pair is exist,
+and prints in the format n = i + (n+i) and stop the loop.
 
 # Part b: Find two primes such that one is n plus another prime
-The program goes over a for loop from 2, which is the first prime number, up to 1,000,000,000.
+The program goes over a while loop,and put in to the index 2 which is the first prime number.
 It checks if the index is prime and if its counterpart (n + index) is also prime.
-If a pair where both are prime is found, it replacement n + index to p3 and index to p4.
-Then, it prints in the format n = p3 - p4 and stops the loop.
+If a pair where both are prime is found, it prints in the format n = (n+index) - (index) and stops the loop.
 
 # Part c: Count prime numbers in [2,n]
-"The program starts counting from 1, meaning it already counts 2.
+The program starts counting from 1, meaning it already counts 2.
 Then, it only checks odd numbers (starting from 3 up to n-1 since n is even) to see if each number is prime.
 If a number is prime, the count increases by 1.
-When the loop ends, the program will print in the format count prime numbers in [2,n)
+When the loop ends, the program will print in the format count prime numbers in [2,n).
 
  # Part d: Prime factorization of n
 "The program starts with index = 2, which will be the divisor.
@@ -65,22 +70,18 @@ If so, it adds *index to the output and divides n by index. Otherwise,the index 
 Pseudocode
 
     # Part a: Find two primes that sum up to n
-    p1, p2 = 0, 0
     for i from 2 to n-1:
         if isPrime(i) and isPrime(n - i):
-            p1 = i
-            p2 = n - i
-            print n + "=" + p1 + "+" + p2
+            print n + "=" + i + "+" + (n-i)
             break
 
     # Part b: Find two primes such that one is n plus another prime
-    p3, p4 = 0, 0
-    for i from 2 to 100_000_000:
-        if isPrime(n + i) and isPrime(i):
-            p3 = n + i
-            p4 = i
-            print n + "=" + p3 + "-" + p4
+    index=2
+    while true:
+        if isPrime(n + index) and isPrime(index):
+            print n + "=" + (n+i) + "-" + i
             break
+        index++
 
     # Part c: Count prime numbers in [2,n]
     count = 1
@@ -94,7 +95,7 @@ Pseudocode
     print n + "=" + 2
     n=n/2
     while n > 1:
-         If indes divides n and n % index == 0:
+         If index divides n and n % index == 0:
             print "*" + index
             n = n / index
         else:
@@ -105,32 +106,28 @@ Pseudocode
         Scanner scanner = new Scanner(in);
         System.out.println("Enter a natural even number (>4):");//Input even number bigger than 4
         int n = scanner.nextInt();
-        long start= nanoTime();
+        long start=System.currentTimeMillis();
         if(n%2==1||n<=4) {
             System.out.println("error");
             return;
         }
         //a
-        int p1=0,p2=0;
         for (int i = 2; i < n; i++)
         {
             if ((isprime(i)) && (isprime(n - i)))
             {
-                p1 = i;
-                p2 = n - i;
-                System.out.println(n + "=" + p1 + "+" + p2);
+                System.out.println(n + "=" + i + "+" + (n-i));
                 break;
             }
         }
         //b
-        int p4, p3;
-        for (int i = 2; i < 100_000_000; i++) {
-            if (isprime(n + i) && isprime(i)) {
-                p3 = n + i;
-                p4 = i;
-                System.out.println(n + "=" + p3 + "-" + p4);
+        int index = 2;
+        while(true) {
+            if (isprime(n + index) && isprime(index)) {
+                System.out.println(n + "=" + n+index+ "-" + index);
                 break;
             }
+            index++;
         }
         //c
         int count = 1;
@@ -141,7 +138,7 @@ Pseudocode
 
         System.out.println(count + " prime numbers in [2," + n + ")");
         //d
-        int index = 2;
+        index = 2;
         System.out.print(n + "=" +2);
         n=n/2;
         while (n > 1)
@@ -155,8 +152,8 @@ Pseudocode
         System.out.println();
         System.out.println("207302456");
         //f
-        long end = nanoTime();
-        double duration = (end - start) / 1_000_000_000.0;//seconds
+        long end =System.currentTimeMillis();
+        double duration = (end - start) / 1_000.0;//seconds
         System.out.println(duration + " seconds");
     }
 }
